@@ -51,65 +51,73 @@ const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
     >
       {({ handleSubmit, handleChange, values, touched, errors, isSubmitting }) => (
         <form onSubmit={handleSubmit} className={classes.form} noValidate>
-          <TextField
-            id="username"
-            label={<Typography className={classes.label}>Username</Typography>}
-            fullWidth
-            margin="normal"
-            InputLabelProps={{
-              shrink: true,
-            }}
-            InputProps={{
-              classes: { input: classes.inputs },
-            }}
-            name="username"
-            autoComplete="username"
-            autoFocus
-            helperText={touched.username ? errors.username : ''}
-            error={touched.username && Boolean(errors.username)}
-            value={values.username}
-            onChange={handleChange}
-          />
-          <TextField
-            id="email"
-            label={<Typography className={classes.label}>E-mail address</Typography>}
-            fullWidth
-            margin="normal"
-            InputLabelProps={{
-              shrink: true,
-            }}
-            InputProps={{
-              classes: { input: classes.inputs },
-            }}
-            name="email"
-            autoComplete="email"
-            helperText={touched.email ? errors.email : ''}
-            error={touched.email && Boolean(errors.email)}
-            value={values.email}
-            onChange={handleChange}
-          />
-          <TextField
-            id="password"
-            label={<Typography className={classes.label}>Password</Typography>}
-            fullWidth
-            margin="normal"
-            InputLabelProps={{
-              shrink: true,
-            }}
-            InputProps={{
-              classes: { input: classes.inputs },
-            }}
-            type="password"
-            autoComplete="current-password"
-            helperText={touched.password ? errors.password : ''}
-            error={touched.password && Boolean(errors.password)}
-            value={values.password}
-            onChange={handleChange}
-          />
-
+          <Box width="100%" className={classes.inputGroup}>
+            <Typography variant="caption" gutterBottom component="div" className={classes.label}>
+              Email address
+            </Typography>
+            <TextField
+              className={classes.inputs}
+              placeholder="Your email"
+              id="email"
+              fullWidth
+              InputLabelProps={{
+                shrink: true,
+              }}
+              name="email"
+              autoComplete="email"
+              helperText={touched.email ? errors.email : ''}
+              error={touched.email && Boolean(errors.email)}
+              value={values.email}
+              onChange={handleChange}
+            />
+          </Box>
+          <Box width="100%" className={classes.inputGroup}>
+            <Typography variant="caption" gutterBottom component="div" className={classes.label}>
+              Name
+            </Typography>
+            <TextField
+              className={classes.inputs}
+              placeholder="Your name"
+              id="username"
+              fullWidth
+              InputLabelProps={{
+                shrink: true,
+              }}
+              name="username"
+              autoComplete="username"
+              autoFocus
+              helperText={touched.username ? errors.username : ''}
+              error={touched.username && Boolean(errors.username)}
+              value={values.username}
+              onChange={handleChange}
+            />
+          </Box>
+          <Box width="100%" className={classes.inputGroup}>
+            <Typography variant="caption" gutterBottom component="div" className={classes.label}>
+              Password
+            </Typography>
+            <TextField
+              className={classes.inputs}
+              placeholder="Create a password"
+              id="password"
+              fullWidth
+              InputLabelProps={{
+                shrink: true,
+              }}
+              InputProps={{
+                classes: { input: classes.inputs },
+              }}
+              type="password"
+              autoComplete="current-password"
+              helperText={touched.password ? errors.password : ''}
+              error={touched.password && Boolean(errors.password)}
+              value={values.password}
+              onChange={handleChange}
+            />
+          </Box>
           <Box textAlign="center" marginTop={5}>
             <Button type="submit" size="large" variant="contained" color="primary" className={classes.submit}>
-              {isSubmitting ? <CircularProgress style={{ color: 'white' }} /> : 'Create'}
+              {isSubmitting ? <CircularProgress style={{ color: 'white' }} /> : 'Sign up'}
             </Button>
           </Box>
         </form>
