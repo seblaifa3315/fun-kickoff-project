@@ -46,50 +46,51 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
     >
       {({ handleSubmit, handleChange, values, touched, errors, isSubmitting }) => (
         <form onSubmit={handleSubmit} className={classes.form} noValidate>
-          <TextField
-            id="email"
-            label={<Typography className={classes.label}>E-mail address</Typography>}
-            fullWidth
-            margin="normal"
-            InputLabelProps={{
-              shrink: true,
-            }}
-            InputProps={{
-              classes: { input: classes.inputs },
-            }}
-            name="email"
-            autoComplete="email"
-            autoFocus
-            helperText={touched.email ? errors.email : ''}
-            error={touched.email && Boolean(errors.email)}
-            value={values.email}
-            onChange={handleChange}
-          />
-          <TextField
-            id="password"
-            label={<Typography className={classes.label}>Password</Typography>}
-            fullWidth
-            margin="normal"
-            InputLabelProps={{
-              shrink: true,
-            }}
-            InputProps={{
-              classes: { input: classes.inputs },
-              endAdornment: <Typography className={classes.forgot}>Forgot?</Typography>,
-            }}
-            type="password"
-            autoComplete="current-password"
-            helperText={touched.password ? errors.password : ''}
-            error={touched.password && Boolean(errors.password)}
-            value={values.password}
-            onChange={handleChange}
-          />
+          <Box width="100%" className={classes.inputGroup}>
+            <Typography variant="caption" gutterBottom component="div" className={classes.label}>
+              Email address
+            </Typography>
+            <TextField
+              className={classes.inputs}
+              id="email"
+              placeholder="Your email"
+              fullWidth
+              InputLabelProps={{
+                shrink: true,
+              }}
+              name="email"
+              autoComplete="email"
+              autoFocus
+              helperText={touched.email ? errors.email : ''}
+              error={touched.email && Boolean(errors.email)}
+              value={values.email}
+              onChange={handleChange}
+            />
+          </Box>
+          <Box width="100%" className={classes.inputGroup}>
+            <Typography variant="caption" gutterBottom component="div" className={classes.label}>
+              Password
+            </Typography>
+            <TextField
+              id="password"
+              placeholder="Your password"
+              fullWidth
+              InputLabelProps={{
+                shrink: true,
+              }}
+              type="password"
+              autoComplete="current-password"
+              helperText={touched.password ? errors.password : ''}
+              error={touched.password && Boolean(errors.password)}
+              value={values.password}
+              onChange={handleChange}
+            />
+          </Box>
           <Box textAlign="center" marginTop={5}>
             <Button type="submit" size="large" variant="contained" color="primary" className={classes.submit}>
               {isSubmitting ? <CircularProgress style={{ color: 'white' }} /> : 'Login'}
             </Button>
           </Box>
-          <Box height={95} />
         </form>
       )}
     </Formik>
