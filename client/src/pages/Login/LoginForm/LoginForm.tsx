@@ -78,10 +78,6 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
               InputLabelProps={{
                 shrink: true,
               }}
-              InputProps={{
-                classes: { input: classes.inputs },
-                // endAdornment: <Typography className={classes.forgot}>Forgot?</Typography>,
-              }}
               type="password"
               autoComplete="current-password"
               helperText={touched.password ? errors.password : ''}
