@@ -13,7 +13,7 @@ const useStyles = makeStyles(() => ({
   },
   contentwrapper: {
     background: '#fff',
-    height: '81vh',
+    height: '85vh',
     borderRadius: 10,
     boxShadow: '1px -1px 23px 2px rgba(218,225,240,0.75)',
     webkitboxShadow: '1px -1px 23px 2px rgba(218,225,240,0.75)',
@@ -22,7 +22,7 @@ const useStyles = makeStyles(() => ({
   contentTitle: {
     display: 'flex',
     justifyContent: 'center',
-    padding: '40px 0px',
+    padding: '30px 0px',
     fontWeight: 'bolder',
   },
   editProfileForm: {
