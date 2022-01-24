@@ -12,6 +12,12 @@ export const theme = createTheme({
     body2: {
       fontWeight: 'inherit',
     },
+    subtitle1: {
+      fontWeight: 'bolder',
+      fontSize: 10,
+      textTransform: 'uppercase',
+      letterSpacing: 1.1,
+    },
     button: {
       textTransform: 'uppercase',
       fontWeight: 700,
